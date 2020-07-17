@@ -14,6 +14,11 @@ namespace TTC2020.Roundtrip
                 Synchronize(p => p.Name, p => p.Name);
                 Synchronize(p => p.Age, p => 2020 - p.Ybirth);
             }
+
+            public override bool ShouldCorrespond(V1.IPerson left, V2.IPerson right, ISynchronizationContext context)
+            {
+                return left.Name == right.Name;
+            }
         }
 
         public class Container2Container : SynchronizationRule<V1.Container, V2.Container>
@@ -23,6 +28,11 @@ namespace TTC2020.Roundtrip
                 Synchronize(SyncRule<Person2Person>(), c => c.Person, c => c.Person);
                 Synchronize(SyncRule<Dog2Dog>(), c => c.Dog, c => c.Dog);
             }
+
+            public override bool ShouldCorrespond(V1.Container left, V2.Container right, ISynchronizationContext context)
+            {
+                return true;
+            }
         }
 
         public class Dog2Dog : SynchronizationRule<V1.IDog, V2.IDog>
@@ -31,6 +41,11 @@ namespace TTC2020.Roundtrip
             {
                 Synchronize(d => d.Name, d => d.Name);
                 Synchronize(SyncRule<Person2Person>(), d => d.Owner, d => d.Owner);
+            }
+
+            public override bool ShouldCorrespond(V1.IDog left, V2.IDog right, ISynchronizationContext context)
+            {
+                return left.Name == right.Name;
             }
         }
     }

@@ -14,6 +14,11 @@ namespace TTC2020.Roundtrip
             {
                 Synchronize(p => p.Name, p => Coalesce(p.Name));
             }
+
+            public override bool ShouldCorrespond(V1Person left, V2Person right, ISynchronizationContext context)
+            {
+                return left.Name == right.Name;
+            }
         }
 
         [LensPut(typeof(Scenario3Solution), nameof(CoalesceBack))]

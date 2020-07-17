@@ -2,7 +2,7 @@
   "profiles": {
     "GenericSolution": {
       "commandName": "Project",
-      "commandLineArgs": "scenario4-forward ..\\de.hub.mse.ttc2020.benchmark\\data\\scenario4\\instances\\input\\V1a.xmi output\\gen_s4a-f.xml",
+      "commandLineArgs": "scenario4-forward ..\\de.hub.mse.ttc2020.benchmark\\data\\scenario4\\instances\\input\\V1a.xmi output\\gen_s4a-f.xml -n 10",
       "workingDirectory": "D:\\Projekte\\ttc2020\\NMFRoundtrips"
     }
   }

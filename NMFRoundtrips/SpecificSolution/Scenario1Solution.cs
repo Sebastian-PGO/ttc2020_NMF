@@ -1,4 +1,5 @@
-﻿using NMF.Synchronizations;
+﻿using System;
+using NMF.Synchronizations;
 
 using V1Person = TTC2020.Roundtrip.Scenario1.V1.Model.Person;
 using V2Person = TTC2020.Roundtrip.Scenario1.V2.Model.Person;

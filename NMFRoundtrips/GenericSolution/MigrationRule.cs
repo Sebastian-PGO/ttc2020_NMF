@@ -59,6 +59,15 @@ namespace TTC2020.Roundtrip.NMFSolution
             }
         }
 
+        public override bool ShouldCorrespond(TOld left, TNew right, ISynchronizationContext context)
+        {
+            if (left.IsIdentified && right.IsIdentified)
+            {
+                return left.ToIdentifierString() == right.ToIdentifierString();
+            }
+            return false;
+        }
+
 
         private static LambdaExpression CreateLambdaFor<T>(ITypedElement feature)
         {

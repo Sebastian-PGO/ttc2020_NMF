@@ -13,6 +13,11 @@ namespace TTC2020.Roundtrip
             {
                 Synchronize(p => p.Name, p => p.Name);
             }
+
+            public override bool ShouldCorrespond(V1Person left, V2Person right, ISynchronizationContext context)
+            {
+                return left.Name == right.Name;
+            }
         }
     }
 }
