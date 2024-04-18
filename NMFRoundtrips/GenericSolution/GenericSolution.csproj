@@ -2,7 +2,7 @@
 
   <PropertyGroup>
     <OutputType>Exe</OutputType>
-    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <TargetFramework>net8.0</TargetFramework>
     <AssemblyName>TTC2020.Roundtrip.GenericNMFSolution</AssemblyName>
     <RootNamespace>TTC2020.Roundtrip.NMFSolution</RootNamespace>
   </PropertyGroup>
